@@ -1,0 +1,11 @@
+[user]
+	name = Marc Picaud
+	email = picaud.marc@gmail.com
+[push]
+	default = simple
+[color]
+    ui = auto
+[core]
+    editor = vim
+[github]
+	user = marcpicaud
