@@ -25,7 +25,8 @@ set autoread                    " If the file has been changed outside of vim,
                                 " read it again
 set showcmd                     " display incomplete commands
 set incsearch                   " do incremental searching
-set showmode                    " show current mode
+set noshowmode                  " Don't show current mode as powerline does it
+set showtabline=2               " Always show the tabline
 set number                      " show line number
 set ruler                       " show cursor position
 set smartcase                   " ignore case if search pattern is all
