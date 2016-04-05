@@ -1,6 +1,7 @@
 [user]
 	name = Marc Picaud
 	email = picaud.marc@gmail.com
+	signkey = 410C3FFE
 [push]
 	default = simple
 [color]
@@ -9,3 +10,5 @@
     editor = vim
 [github]
 	user = marcpicaud
+[commit]
+	gpgsign = true

@@ -25,7 +25,7 @@ set autoread                    " If the file has been changed outside of vim,
                                 " read it again
 set showcmd                     " display incomplete commands
 set incsearch                   " do incremental searching
-set noshowmode                  " Don't show current mode as powerline does it
+set showmode                    " show current mode
 set showtabline=2               " Always show the tabline
 set number                      " show line number
 set ruler                       " show cursor position
@@ -68,6 +68,7 @@ if has("autocmd")
         autocmd VimEnter,BufNewFile,BufReadPost * silent!
         " For all text files set 'textwidth' to 78 characters.
         autocmd FileType text setlocal textwidth=78
+        autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
         " :set list for PHP files
         autocmd FileType php setlocal list
         " Autoformat (with gq) with par
@@ -146,6 +147,12 @@ let g:tagbar_sort = 0
 " <Leader> key is ';'
 let mapleader=";"
 let g:mapleader=";"
+
+" Let CtrlP show hidden files
+let g:ctrlp_show_hidden = 1
+" CtrlP Custom Ignore
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+
 
 
 " **** MAPPINGS ****
