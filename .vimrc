@@ -97,28 +97,30 @@ if !exists(":DiffOrig")
 endif
 
 " **** PLUGINS ***
-filetype off                        " required
-set rtp+=~/.vim/bundle/Vundle.vim   " set the runtime path to include Vundle
-                                    " and initialize
+filetype off                           " required
+set rtp+=~/.vim/bundle/Vundle.vim      " set the runtime path to include Vundle
+                                       " and initialize
 call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'       " let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'          " let Vundle manage Vundle, required
 Plugin 'vim-scripts/L9'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'pangloss/vim-javascript'    " Vastly improved Javascript indentation
-                                    " and syntax support
-Plugin 'tpope/vim-fugitive'         " Awesome Git plugin
-Plugin 'rstacruz/sparkup'           " HTML generator
-Plugin 'ctrlpvim/ctrlp.vim'         " Fuzzy file, buffer, mru, tag, etc finder
-Plugin 'scrooloose/syntastic'       " Syntax checker
-Plugin 'tpope/vim-commentary'       " Comment stuff in, comment stuff out
-Plugin 'tpope/vim-surround'         " Quoting/Parenthesizing made simple
-Plugin 'vim-scripts/ZoomWin'        " Zoom inside split with <C-o>
-Plugin 'majutsushi/tagbar'          " Display tag in a window by scope
-Plugin 'spf13/vim-autoclose'        " Autoclose quotes, brackets, etc.
-Plugin 'mattn/webapi-vim'           " Vim interface to web APIs
-Plugin 'mattn/gist-vim'             " Handle GitHub gists directly within vim
-Plugin 'ervandew/supertab'          " <Tab> autocompletion
-Plugin 'powerline/powerline'        " Fancy statusline
+Plugin 'pangloss/vim-javascript'       " Vastly improved Javascript indentation
+                                       " and syntax support
+Plugin 'tpope/vim-fugitive'            " Awesome Git plugin
+Plugin 'rstacruz/sparkup'              " HTML generator
+Plugin 'ctrlpvim/ctrlp.vim'            " Fuzzy file, buffer, mru, tag, etc finder
+Plugin 'scrooloose/syntastic'          " Syntax checker
+Plugin 'tpope/vim-commentary'          " Comment stuff in, comment stuff out
+Plugin 'tpope/vim-surround'            " Quoting/Parenthesizing made simple
+Plugin 'vim-scripts/ZoomWin'           " Zoom inside split with <C-o>
+Plugin 'spf13/vim-autoclose'           " Autoclose quotes, brackets, etc.
+Plugin 'mattn/webapi-vim'              " Vim interface to web APIs
+Plugin 'mattn/gist-vim'                " Handle GitHub gists directly within vim
+Plugin 'ervandew/supertab'             " <Tab> autocompletion
+Plugin 'powerline/powerline'           " Fancy statusline
+Plugin 'junegunn/vim-easy-align'       " Aligment plugin
+Plugin 'Valloric/YouCompleteMe'        " Autocompletion
+Plugin 'scrooloose/nerdtree'           " File tree
+Plugin 'editorconfig/editorconfig-vim' " Editor config
 call vundle#end()
 
 "enable powerline-status
@@ -127,10 +129,14 @@ python powerline_setup()
 python del powerline_setup
 
 set background=dark
-hi IndentGuidesOdd  guibg=red   ctermbg=0
-hi IndentGuidesEven guibg=green ctermbg=236
 
 filetype plugin indent on
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 " Let vim-gist open browser after posting a Gist
 let g:gist_open_browser_after_post = 1
@@ -141,9 +147,6 @@ let g:gist_show_privates = 1
 " Fancy powerline symbols
 let g:Powerline_symbols = "fancy"
 
-" Do not sort tags by their name
-let g:tagbar_sort = 0
-
 " <Leader> key is ';'
 let mapleader=";"
 let g:mapleader=";"
@@ -153,12 +156,15 @@ let g:ctrlp_show_hidden = 1
 " CtrlP Custom Ignore
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
+let g:syntastic_php_checkers = ['php', 'phpcs']
 
 
 " **** MAPPINGS ****
 
 " Ctrl+n to call TagBar
-map <C-n> :TagbarOpenAutoClose<CR>
+map <C-N> :TagbarOpenAutoClose<CR>
+" Ctrl+n to call nerdtree"
+map <C-n> :NERDTreeToggle<CR>
 
 "disable arrow keys
 noremap <Up> <NOP>
