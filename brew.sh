@@ -63,3 +63,4 @@ brew install p7zip
 brew install tree
 brew install htop
 brew install tmux
+brew install lazygit
