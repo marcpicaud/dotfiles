@@ -22,6 +22,10 @@ end
 config.font = wezterm.font 'JetBrains Mono'
 config.font_size = 14
 config.color_scheme = 'Catppuccin Frappe'
+config.inactive_pane_hsb = {
+  saturation = 0.7,
+  brightness = 0.6,
+}
 config.enable_kitty_keyboard = true
 
 local act = wezterm.action
