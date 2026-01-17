@@ -64,3 +64,8 @@ brew install tree
 brew install htop
 brew install tmux
 brew install lazygit
+brew install asdf
+
+# cloud providers
+brew install supabase
+brew install gcloud
