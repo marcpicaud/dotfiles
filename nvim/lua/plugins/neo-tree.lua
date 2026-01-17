@@ -16,6 +16,12 @@ return {
       },
       filesystem = {
         filtered_items = {
+          never_show = {
+            "__pycache__",
+            ".pytest_cache",
+            ".ruff_cache",
+            ".DS_Store",
+          },
           visible = true, -- show hidden files by default
         },
       },
