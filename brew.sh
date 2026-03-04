@@ -69,3 +69,4 @@ brew install asdf
 # cloud providers
 brew install supabase
 brew install gcloud
+brew install jq
