@@ -57,6 +57,7 @@ brew install xz
 brew install ack
 brew install git
 brew install git-lfs
+brew install gh
 brew install imagemagick
 brew install lua
 brew install p7zip
